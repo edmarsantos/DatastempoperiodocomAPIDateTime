@@ -75,8 +75,7 @@ public class DataEmJava {
 				System.out.println(" ");
 				System.out.println("Comparando Datas");
 				
-				
-	
+				//nova aula
 				SimpleDateFormat simpleDateFormat2 = new SimpleDateFormat("dd/MM/yyyy");//declarar o formato desejado
 				
 				 Date datavencimento = simpleDateFormat2.parse("10/04/2021");
@@ -96,7 +95,22 @@ public class DataEmJava {
 					 System.out.println("comparação utilizando o before Boleto em Dia");
 				 }
 				 
+				 
+				 //aula 5 calcula de dia mes e ano com calendar
+				 
+				 Calendar calendar2 = Calendar.getInstance();//por padrao pega a data atual 
+				 
+				 //simulação de dada pegando do  banco
+				 calendar2.setTime(new SimpleDateFormat("dd-MM-yyyy").parse("10-03-2021"));//definindo uma data
+				 
+				 calendar2.add(calendar2.DAY_OF_MONTH, 15);//vai somar 15 dias  para subtrair colocar o valor negativo
+				 System.out.println( "o dia simulado é 10-03-2021 somando 15 dias vai para "+  new SimpleDateFormat("dd-MM-yyyy").format(calendar2.getTime()));
 				
+				 calendar2.add(calendar2.MONTH, 3);//vai somar 3 meses 
+				 System.out.println( "o dia simulado é 10-03-2021 somando 3 meses vai para "+  new SimpleDateFormat("dd-MM-yyyy").format(calendar2.getTime()));
+				 
+				 calendar2.add(calendar2.YEAR, 2);//vai somar 3 meses  para subtrair colocar o valor negativo
+				 System.out.println( "o dia simulado é 10-03-2021 somando 2 anos  vai para "+  new SimpleDateFormat("dd-MM-yyyy").format(calendar2.getTime()));
 	}
 
 }
