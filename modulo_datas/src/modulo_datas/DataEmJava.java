@@ -71,9 +71,32 @@ public class DataEmJava {
 				System.out.println("Data formato de banco de dados:" + simpleDateFormat.format(calendar.getTime()));
 				System.out.println(" ");
 				
+				//comparando datas
+				System.out.println(" ");
+				System.out.println("Comparando Datas");
+				
 				
 	
-	
+				SimpleDateFormat simpleDateFormat2 = new SimpleDateFormat("dd/MM/yyyy");//declarar o formato desejado
+				
+				 Date datavencimento = simpleDateFormat2.parse("10/04/2021");
+				 
+				 Date dataatualhoje = simpleDateFormat2.parse("07/04/2021");
+				 System.out.println("data Vencimento " + datavencimento);
+				 System.out.println("data atual " + dataatualhoje);
+				 if(datavencimento.after(dataatualhoje)) {//comparando se a data maior ou depois da data atual
+					 System.out.println("comparação utilizando o after  Boleto em Dia");
+				 }else {
+					 System.out.println("comparação utilizando o after  Boleto Vencido");
+				 }
+				 
+				 if(datavencimento.before(dataatualhoje)) {//comparando se a data menor ou antes da data atual
+					 System.out.println("comparação utilizando o before Boleto Vencido");
+				 }else {
+					 System.out.println("comparação utilizando o before Boleto em Dia");
+				 }
+				 
+				
 	}
 
 }
