@@ -2,8 +2,13 @@ package modulo_datas;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.temporal.ChronoUnit;
 import java.util.Calendar;
 import java.util.Date;
+
+import javax.print.attribute.standard.Chromaticity;
 
 public class DataEmJava {
 
@@ -111,6 +116,25 @@ public class DataEmJava {
 				 
 				 calendar2.add(calendar2.YEAR, 2);//vai somar 3 meses  para subtrair colocar o valor negativo
 				 System.out.println( "o dia simulado é 10-03-2021 somando 2 anos  vai para "+  new SimpleDateFormat("dd-MM-yyyy").format(calendar2.getTime()));
+
+	
+	//trabalhando com faixa de tempo aula 6
+				 
+				 //ChronoUnit serve para pegar a quantidade de dias  entre uma data e outra
+				long dias = ChronoUnit.DAYS.between(LocalDate.parse("2020-02-01"), LocalDate.now());
+				System.out.println("Possui "+ dias + " dias entre a faixa de Datas");
+				
+				long meses = ChronoUnit.MONTHS.between(LocalDate.parse("2021-01-01"), LocalDate.now());
+				System.out.println("Possui "+ meses + " meses entre a faixa de Datas");
+				
+				long semana = ChronoUnit.WEEKS.between(LocalDate.parse("2021-01-01"), LocalDate.now());
+				System.out.println("Possui "+ semana + " semanas entre a faixa de Datas");
+				
+				long ano = ChronoUnit.YEARS.between(LocalDate.parse("2018-01-01"), LocalDate.now());
+				System.out.println("Possui "+ ano + " ano entre a faixa de Datas");
+	
+				
+				
 	}
 
 }
