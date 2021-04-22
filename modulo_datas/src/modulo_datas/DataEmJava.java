@@ -4,6 +4,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.LocalTime;
 import java.time.temporal.ChronoUnit;
 import java.util.Calendar;
 import java.util.Date;
@@ -148,7 +149,23 @@ public class DataEmJava {
 	        	   
 	           }
 	           
+	           
+	           //15.8 - Nova API de Data e Hora do Java
+	           //Nova Api de data partir do Java 8
+	           
+	           LocalDate dataAtual = LocalDate.now(); //data atual
+	           System.out.println(" " );
+	           System.out.println("Data atual é " + dataAtual);
+	           
+	           LocalTime horaAtual = LocalTime.now(); //hora atual
+	           System.out.println("Hora atual é " + horaAtual);
+	           
+	           
+	           LocalDateTime dataAtualhoraatual = LocalDateTime.now();
+	           System.out.println("Data e Hora atual é " + dataAtualhoraatual);
+	           
 	
+	          
 	
 	}
 
