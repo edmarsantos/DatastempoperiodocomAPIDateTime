@@ -133,8 +133,23 @@ public class DataEmJava {
 				long ano = ChronoUnit.YEARS.between(LocalDate.parse("2018-01-01"), LocalDate.now());
 				System.out.println("Possui "+ ano + " ano entre a faixa de Datas");
 	
+				// Gerando parcelas mensais e suas datas aula 7
 				
-				
+	          Date dateinicial = new SimpleDateFormat("dd/MM/yyyy").parse("08/04/2021");
+	           
+	           Calendar calendar3 = Calendar.getInstance();
+	           
+	           calendar3.setTime(dateinicial);
+	           
+	           for(int parcela = 1;parcela <=12;parcela++) { //vai somar as parcelas a cada passada
+	        	   calendar3.add(calendar3.MONDAY, 1); //cada vez que ele passar vai acrescentar um mes
+	        	   System.out.println("Parcela de número " + parcela + " vencimento em " 
+	        	   + new SimpleDateFormat("dd/MM/yyyy").format(calendar3.getTime()));
+	        	   
+	           }
+	           
+	
+	
 	}
 
 }
