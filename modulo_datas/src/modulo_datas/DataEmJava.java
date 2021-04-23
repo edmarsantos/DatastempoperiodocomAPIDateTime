@@ -5,6 +5,7 @@ import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
 import java.time.temporal.ChronoUnit;
 import java.util.Calendar;
 import java.util.Date;
@@ -150,8 +151,8 @@ public class DataEmJava {
 	           }
 	           
 	           
-	           //15.8 - Nova API de Data e Hora do Java
-	           //Nova Api de data partir do Java 8
+	           //15.8 - Nova API de Data e Hora do Java  aula 8
+	           //Nova Api de data partir do Java 8 utiliza o LocalDate
 	           
 	           LocalDate dataAtual = LocalDate.now(); //data atual
 	           System.out.println(" " );
@@ -164,7 +165,13 @@ public class DataEmJava {
 	           LocalDateTime dataAtualhoraatual = LocalDateTime.now();
 	           System.out.println("Data e Hora atual é " + dataAtualhoraatual);
 	           
-	
+	           
+	           //15.9 - Formatando data e hora com nova API aula 9
+	           
+	           System.out.println("Data e Hora usando iso_date atual é " + dataAtualhoraatual.format(DateTimeFormatter.ISO_DATE)); //nesse modo não precisa do simpledatetime
+	           System.out.println("Data e Hora usando ofPattern atual é  " + dataAtualhoraatual.format(DateTimeFormatter.ofPattern("dd/MM/yyyy")));//ofPattern usado para definir o novo padrao
+	           System.out.println("Data e Hora usando ofPattern atual é  " + dataAtualhoraatual.format(DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm")));//ofPattern usado para definir o novo padrao
+	           System.out.println("Data e Hora atual é " + dataAtualhoraatual.format(DateTimeFormatter.ofPattern("HH:mm:ss")));
 	          
 	
 	}
