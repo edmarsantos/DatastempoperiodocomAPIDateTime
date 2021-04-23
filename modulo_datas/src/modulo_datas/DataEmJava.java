@@ -172,8 +172,24 @@ public class DataEmJava {
 	           System.out.println("Data e Hora usando ofPattern atual é  " + dataAtualhoraatual.format(DateTimeFormatter.ofPattern("dd/MM/yyyy")));//ofPattern usado para definir o novo padrao
 	           System.out.println("Data e Hora usando ofPattern atual é  " + dataAtualhoraatual.format(DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm")));//ofPattern usado para definir o novo padrao
 	           System.out.println("Data e Hora atual é " + dataAtualhoraatual.format(DateTimeFormatter.ofPattern("HH:mm:ss")));
-	          
+	          System.out.println(" ");
 	
+	           //Dia, meses, anos e semanas AULA 10
+	           
+	           LocalDate localdate = LocalDate.now();
+	           System.out.println("dia atual:" + localdate.format(DateTimeFormatter.ofPattern("dd/MM/yyyy")));
+	           
+	           System.out.println("Dia da semana:" + localdate.getDayOfWeek().name());
+		           
+	           System.out.println("Dia do mês:" + localdate.getDayOfMonth());
+	           
+	           System.out.println("Dia do Ano:" + localdate.getDayOfYear());//mostra qtd da dias do ano
+	           
+	           System.out.println("Mês:" + localdate.getMonth());//mostra qtd da dias do ano
+	           
+	           System.out.println("Ano:" + localdate.getYear());//mostra qtd da dias do ano
+	           
+		       
 	}
 
 }
