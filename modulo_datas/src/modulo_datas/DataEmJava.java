@@ -2,6 +2,8 @@ package modulo_datas;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.time.Duration;
+import java.time.Instant;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
@@ -14,7 +16,7 @@ import javax.print.attribute.standard.Chromaticity;
 
 public class DataEmJava {
 
-	public static void main(String[] args) throws ParseException {
+	public static void main(String[] args) throws ParseException, InterruptedException {
 		
 		Date date = new Date();
 		System.out.println("Utilizando date");
@@ -189,7 +191,29 @@ public class DataEmJava {
 	           
 	           System.out.println("Ano:" + localdate.getYear());//mostra qtd da dias do ano
 	           
-		       
+		       //Tempo de processo com Instant
+	           
+	           Instant inicio = Instant.now();
+	           
+	           Thread.sleep(2000);//Pode ser um processo com tempo qualquer que nao conhecemos
+	           
+	           Instant ifinal = Instant.now();
+	           
+	           Duration duracao = Duration.between(inicio, ifinal);
+	           
+	           System.out.println("Durção em nano Segundos:"+ duracao.toNanos());
+	           
+	           System.out.println("Durção em nano Minutos:"+ duracao.toMinutes());
+	           
+	           System.out.println("Durção em nano Horas:"+ duracao.toHours());
+	           
+	          
+	           System.out.println("Durção em nano milisegundos:"+ duracao.toMillis());
+	           
+	           System.out.println("Durção em nano Horas:"+ duracao.toDays());
+		          
+		          
+	           
 	}
 
 }
