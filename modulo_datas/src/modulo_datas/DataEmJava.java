@@ -7,6 +7,7 @@ import java.time.Instant;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
+import java.time.Period;
 import java.time.format.DateTimeFormatter;
 import java.time.temporal.ChronoUnit;
 import java.util.Calendar;
@@ -193,6 +194,7 @@ public class DataEmJava {
 	           
 		       //Tempo de processo com Instant
 	           
+	           System.out.println(" ");
 	           Instant inicio = Instant.now();
 	           
 	           Thread.sleep(2000);//Pode ser um processo com tempo qualquer que nao conhecemos
@@ -212,8 +214,33 @@ public class DataEmJava {
 	           
 	           System.out.println("Durção em nano Horas:"+ duracao.toDays());
 		          
-		          
+		     //Faixa de tempo com Objeto Period
 	           
+	           System.out.println(" ");
+	           
+	          // LocalDate dataAntiga = LocalDate.of(2020, 2, 7);
+	           LocalDate dataAntiga = LocalDate.parse("2019-10-05");
+	           
+	           //LocalDate dataNova = LocalDate.of(2021, 7, 4);
+	           LocalDate dataNova = LocalDate.parse("2021-10-15");
+	           
+	           System.out.println("Data Antiga é maior que a data Nova " + dataAntiga.isAfter(dataNova));
+	           
+	           System.out.println("Data Antiga é anterior  a data Nova " + dataAntiga.isBefore(dataNova));
+	           
+	           System.out.println("Data Antiga é igual  a data Nova " + dataAntiga.isEqual(dataNova));	           
+	
+	Period periodo = Period.between(dataAntiga, dataNova);
+	
+	System.out.println("Quantidade de DIas:"+ periodo.getDays());
+	
+	System.out.println("Quantidade de Meses:"+ periodo.getMonths());
+	
+	System.out.println("Quantidade de Anos:"+ periodo.getYears());
+	
+	System.out.println("Quantidade total de meses:"+ periodo.toTotalMonths());
+	
+	System.out.println("Periodo: "+ periodo.getYears() + " Anos " + periodo.getMonths() + "  Meses " + periodo.getDays() + " e dias");
 	}
 
 }
