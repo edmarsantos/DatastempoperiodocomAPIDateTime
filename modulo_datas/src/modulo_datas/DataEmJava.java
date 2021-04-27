@@ -241,6 +241,39 @@ public class DataEmJava {
 	System.out.println("Quantidade total de meses:"+ periodo.toTotalMonths());
 	
 	System.out.println("Periodo: "+ periodo.getYears() + " Anos " + periodo.getMonths() + "  Meses " + periodo.getDays() + " e dias");
+	
+	//Data, anos, dias, meses e parcelas com LocalDate
+
+	System.out.println(" ");
+	LocalDate dataBase = LocalDate.parse("2019-10-05");
+	
+	System.out.println("Mais 5 dias:" + (dataBase = dataBase.plusDays(5)));
+	
+	System.out.println("Mais 5 semans:" + (dataBase =dataBase.plusWeeks(5)));
+	
+	System.out.println("Mais 5 anos:" + (dataBase =dataBase.plusYears(5)));
+	
+	System.out.println("Mais 2 meses:" + (dataBase =dataBase.plusMonths(2)));
+	
+	System.out.println("Menos 1 anos:" + (dataBase =dataBase.minusYears(1)));	
+	
+     System.out.println("Menos 5 semans:" + (dataBase =dataBase.minusWeeks(5)));
+	
+	System.out.println("Menos 2 meses:" + (dataBase =dataBase.minusMonths(2)));
+	
+	System.out.println("Menos 5 dias:" + (dataBase = dataBase.minusDays(5)));
+	
+	dataBase = LocalDate.parse("2019-10-05");
+	
+	for(int mes =1 ;mes <= 12;mes++) {
+		
+		dataBase = dataBase.plusMonths(1);
+		
+		System.out.println("Data Vencimento do boleto " + dataBase.format(DateTimeFormatter.ofPattern("dd/MM/yyyy")) + "do mês " + mes);
+	}
+			
+			
+	
 	}
 
 }
